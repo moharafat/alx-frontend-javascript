@@ -19,15 +19,13 @@ export default class HolbertonCourse {
   }
 
   // setter functions
-  set name(added_name) {
-    if (typeof added_name === 'string') {
-      this._name = added_name;
+  set name(addedName) {
+    if (typeof addedName === 'string') {
+      this._name = addedName;
     } else {
       throw new Error('Name must be a string');
     }
-    
   }
-
 
   set length(value) {
     if (typeof value !== 'number') {
@@ -45,5 +43,4 @@ export default class HolbertonCourse {
     }
     this._students = value;
   }
-
 }
