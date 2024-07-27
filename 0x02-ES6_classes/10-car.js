@@ -39,6 +39,7 @@ export default class Car {
   }
 
   cloneCar() {
-    return new Car(this.brand, this.motor, this.color);
+    // Creating a new instance of the class with the same attributes
+    return new this.constructor(this._brand, this._motor, this._color);
   }
 }
