@@ -1,11 +1,16 @@
-export default function updateStudentGradeByCity(studentList, city, newGrades) {
-  return studentList
-    .filter((elementStudent) => elementStudent.location === city)
-    .map((elementStudent) => {
-      const grade = newGrades.filter((newGrade) => newGrade.studentId === elementStudent.id);
-      if (grade.length === 0) {
-        grade.push({ studentId: elementStudent.id, grade: 'N/A' });
-      }
-      return { ...elementStudent, grade: grade[0].grade };
+export default function updateStudentGradeByCity(students, city, newGrades) {
+  // Filter students by the specified city
+  return students
+    .filter(student => student.location === city)
+    .map(student => {
+      // Find the grade for the current student
+      const gradeEntry = newGrades.find(grade => grade.studentId === student.id);
+      // Return the updated student object with grade
+      return {
+        id: student.id,
+        firstName: student.firstName,
+        location: student.location,
+        grade: gradeEntry ? gradeEntry.grade : 'N/A'
+      };
     });
 }
