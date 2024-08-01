@@ -51,3 +51,22 @@ function printTeacher(firstName: string, lastName: string) {
 }
 
 console.log(printTeacher("John", "Doe"));
+
+
+class StudentClass {
+  firstName: string;
+  lastName: string;
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  workOnHomework() {
+    return 'Currently working';
+  }
+  displayName() {
+    return this.firstName;
+  }
+}
+const newStudent = new StudentClass('John', 'Doe');
+console.log(newStudent.workOnHomework());
+console.log(newStudent.displayName());
